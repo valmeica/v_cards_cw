@@ -1,21 +1,11 @@
 <p id="notice"><%= notice %></p>
  
 <p>
-  <strong>Name:</strong>
-  <%= @card.name %>
-</p>
- 
-<p>
-  <strong>Description:</strong>
-  <%= @card.description %>
-</p>
- 
-<p>
   <strong>Image:</strong>
   <%= image_tag @card.image.thumb.url %>
 </p>
  
-<%= link_to 'Edit', edit_card_path(@card) %> |
+|
 <%= link_to 'Back', cards_path %>
 
 <p class="breadcrumb">
@@ -26,6 +16,10 @@
 	<h1><%= @card.name %></h1><br>
 
 	<%= image_tag @card.image.url, :class => "image_show" %><br>
+	<p>
+  <strong>Description:</strong>
+  <%= @card.description %>
+</p><br>
 
 	<%= link_to "Delete", @card, :method => :delete %> / <%= link_to "Edit", edit_card_path(@card) %>
 </div>

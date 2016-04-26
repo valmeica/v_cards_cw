@@ -1,10 +1,14 @@
 class CardsController < ApplicationController
+  include RowHelper
   before_action :set_card, only: [:show, :edit, :update, :destroy]
 
   # GET /cards
   # GET /cards.json
   def index
-    @cards = Card.all
+    #@cards = Card.all
+    @array = []
+	cards = Card.all.shuffle
+	row_split(cards)
   end
 
   # GET /cards/1

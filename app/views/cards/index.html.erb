@@ -1,31 +1,58 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Cards</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Image</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<body>
+	<header>
+		<h1>V-Cards</h1>
+<h3>Keep your business contacts in your hand.</h3>
+<%= link_to 'New Card', new_card_path %>
+</header>
 
-  <tbody>
-    <% @cards.each do |card| %>
-      <tr>
-        <td><%= card.name %></td>
-        <td><%= card.description %></td>
-        <td><img src="<%= card.image %>" width ="300" height="200" ></td>
-        <td><%= link_to 'Show', card %></td>
-        <td><%= link_to 'Edit', edit_card_path(card) %></td>
-        <td><%= link_to 'Destroy', card, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+	<div id="main">
+		<article>
+			<div class="Row">
+				<div class="Grid">
+					<div class="Grid--1ofX">
+					  
+					  <article>
+    <% @array.each do |row| %>
+		<div class="Row">
+			<div class="Grid">
+				<% row.compact.each do |p| %>
+					<div class="Grid--1ofX">
+						<a href="/cards/<%= p.id %>"><%= image_tag p.image.url %></a>
+					</div>
+				
+				<% end %>
+			</div>
+		</div>
+	<% end %>
+
+</article>
+
 
 <br>
 
 <%= link_to 'New Card', new_card_path %>
+	               </div>
+				        </div>
+			         </div>
+		</article>
+	
+  <aside>
+			<h2>Sidebar</h2>
+			
+			Some verry important news from the business world!<br>
+			<img src="http://ownbond.com/wp-content/uploads/2014/02/raise-money-business-finance.jpg" width= "300" height"200"><br>
+			<img src="http://www.adllawaz.com/wp-content/uploads/2012/10/Business-Debt-Money-Down-the-Drain.jpg" width= "300" height"200">
+			
+  </aside>
+</div>
+ 
+	<footer>
+		Footer <br>
+		This app was created as part of software development class prject.<br>
+		All rights reserved.
+		
+	</footer>
+</body>
